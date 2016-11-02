@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>dni</title>
+    </head>
+    <script>
+    function validarDNI()
+        {
+            
+        
+    var r = document.getElementById("dni").value;
+    var resultado = document.getElementById("result");
+    
+    
+   var letra= r[r.length-1];
+        
+        
+        var letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E", "T"];
+        var num="";
+        for ( var i=0;i<r.length-1;i++)
+            
+            {
+                
+                num+=r[i];
+                
+            }
+            num = parseInt(num);
+        var res=num%23;
+        
+        if(letras[res]==letra)
+            {
+              cad="es valido";  
+            }
+        else
+            {
+             cad = " no es valido";
+                
+                
+            }
+            
+     resultado.innerHTML = cad
+     var cad = "";
+        }
+    </script>
+    <body>
+        <form>
+            <input type="text" placeholder="DNI con letra" id="dni">
+            <input type="button" value="validar" onclick="validarDNI();">
+            <output id="result"></output>
+        </form>
+        
+        <script>
+            
+        </script>
+    </body>
+</html>
